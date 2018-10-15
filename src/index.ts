@@ -10,7 +10,7 @@ import {
 const {
   default: styled,
   css,
-  injectGlobal,
+  createGlobalStyle,
   keyframes,
 } = styledComponents as ThemedStyledComponentsModule<Theme>;
 
@@ -26,7 +26,7 @@ const styledWithProps = <
 
 type StyledProps<P> = ThemedStyledProps<P, Theme>;
 
-export { css, injectGlobal, keyframes, StyledProps, styledWithProps, styled };
+export { css, createGlobalStyle, keyframes, StyledProps, styledWithProps, styled };
 export default styled;
 
 export * from './StyleProvider';
