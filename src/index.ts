@@ -25,4 +25,4 @@ const {
 
 export * from './StyleProvider';
 export { css, createGlobalStyle, keyframes, withTheme, ThemeConsumer, ThemeContext, ThemeProvider };
-export default styled;
+export default styled.default;
