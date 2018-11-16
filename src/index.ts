@@ -1,32 +1,28 @@
-import * as React from 'react';
 import * as styledComponents from 'styled-components';
 import { Theme } from '@material-ui/core';
-import {
-  ThemedStyledComponentsModule,
-  ThemedStyledProps,
-  ThemedStyledFunction,
-} from 'styled-components';
+import { ThemedStyledComponentsModule } from 'styled-components';
+
+const styled: ThemedStyledComponentsModule<Theme> = {
+  default: styledComponents.default,
+  css: styledComponents.css,
+  createGlobalStyle: styledComponents.createGlobalStyle,
+  keyframes: styledComponents.keyframes,
+  withTheme: styledComponents.withTheme,
+  ThemeConsumer: styledComponents.ThemeConsumer,
+  ThemeContext: styledComponents.ThemeContext,
+  ThemeProvider: styledComponents.ThemeProvider,
+};
 
 const {
-  default: styled,
   css,
   createGlobalStyle,
   keyframes,
-} = styledComponents as ThemedStyledComponentsModule<Theme>;
-
-const styledWithProps = <
-  SProps,
-  TProps extends object = Theme,
-  U extends HTMLElement = HTMLElement
->(
-  styledFunction: ThemedStyledFunction<any, any>,
-): ThemedStyledFunction<SProps & React.HTMLProps<U>, TProps> => {
-  return styledFunction;
-};
-
-type StyledProps<P> = ThemedStyledProps<P, Theme>;
-
-export { css, createGlobalStyle, keyframes, StyledProps, styledWithProps, styled };
-export default styled;
+  withTheme,
+  ThemeConsumer,
+  ThemeContext,
+  ThemeProvider,
+} = styled;
 
 export * from './StyleProvider';
+export { css, createGlobalStyle, keyframes, withTheme, ThemeConsumer, ThemeContext, ThemeProvider };
+export default styled;

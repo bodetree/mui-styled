@@ -12,7 +12,8 @@ jssOpts.insertionPoint = 'jss-insertion-point';
 const jss = create(jssOpts);
 
 export interface StyleProviderProps {
-  theme: Theme;
+  theme: Theme | ((theme: Theme | null) => Theme);
+  children?: React.ReactChild;
 }
 
 export const StyleProvider: React.SFC<StyleProviderProps> = ({ theme, children }) => (
