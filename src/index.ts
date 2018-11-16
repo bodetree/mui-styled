@@ -23,6 +23,17 @@ const {
   ThemeProvider,
 } = styled;
 
+const styledFn = styled.default;
+
 export * from './StyleProvider';
-export { css, createGlobalStyle, keyframes, withTheme, ThemeConsumer, ThemeContext, ThemeProvider };
+export {
+  css,
+  createGlobalStyle,
+  keyframes,
+  withTheme,
+  ThemeConsumer,
+  ThemeContext,
+  ThemeProvider,
+  styledFn as styled,
+};
 export default styled.default;
